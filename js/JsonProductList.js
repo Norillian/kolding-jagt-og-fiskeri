@@ -35,7 +35,7 @@ weightBeforeZipCode=200000;
 					divList.addClass('products');
 				}
 				else {
-					divList = $("<ul class='products small-block-grid-2 medium-block-grid-3 large-block-grid-4'></ul>");
+					divList = $("<ul class='products small-block-grid-1 medium-block-grid-3'></ul>");
 				}
 				$(selector).empty();
 				$(selector).append(divList);
