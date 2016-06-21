@@ -1705,11 +1705,15 @@
         background-color: #fff;
         text-decoration: none;
     }
-
+    [class*="block-grid-"]>li,
     .jsonProducts .productElement {
         padding: 0px;
         margin-bottom: 0.9375rem;
         text-align: center;
+        width: 50%;
+        float: none;
+        display:inline-block;
+        vertical-align:top;
     }
 
     .jsonProducts .productElement:hover {
@@ -3685,6 +3689,11 @@
 
     .OrderTotalsBdy div table {
         width: 100%;
+    }
+    [class*="block-grid-"]>li,
+    .jsonProducts .productElement{
+        width: auto;
+        display: block;
     }
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
