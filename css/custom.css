@@ -1024,7 +1024,7 @@
 		color: #868484;
 		font-size: 11px;
 		text-transform: uppercase;
-		background-image: url('/media/121/img/pMenuSpacer.png');
+		// background-image: url('/media/121/img/pMenuSpacer.png');
 		background-repeat: no-repeat;
 		background-position: right center;
 		margin-right: 10px;
@@ -3139,6 +3139,16 @@
 		top: 5px;
 		right: 5px;
 	}
+	#rightTop .icon-holder{
+		float: left;
+		margin: 38px 20px 0 0;
+		height: 49px;
+	}
+	#rightTop .icon-holder img{
+		display: block;
+		height: 100%;
+		width: auto;
+	}
 
 } /* Define mobile styles */
 
@@ -3702,6 +3712,7 @@
 		width: auto;
 		display: block;
 	}
+	#rightTop .icon-holder{display: none;}
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
@@ -3734,6 +3745,7 @@
 	#advancedSearchBdy {
 		display: block;
 		position: relative;
+		float: right;
 	}
 
 	/*** Teaser box styles ***/
@@ -3882,6 +3894,12 @@
 	.searchResultsMenusBdy > div.prmain {
 		width: 25%;
 	}
+	#rightTop .icon-holder{margin: 38px 10px 0 -15px;}
+	#advancedSearchBdy {margin-right: 65px; }
+	#miniBasket a.show-for-medium-up{
+		min-width: 162px;
+		padding: 13px 10px 11px;
+	}
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
@@ -3921,6 +3939,7 @@
 
 /* Quick fix for the alignment of search and basket in the top */
 @media only screen and (min-width:640px) and (max-width:702px){
+	#rightTop .icon-holder{display: none;}
 	div#rightTop > div{
 		width:50%;
 	}
