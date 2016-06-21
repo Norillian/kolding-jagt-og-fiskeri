@@ -928,7 +928,7 @@
 		padding-left: 0.9375rem;
 		padding-right: 0.9375rem;
 	}
-
+	#topMenuQuickLinks ul.f-dropdown .innerDropdown li{background: none;}
 	.f-dropdown::before,
 	.f-dropdown::after {
 		display: none;
