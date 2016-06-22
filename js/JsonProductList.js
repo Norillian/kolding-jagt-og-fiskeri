@@ -187,7 +187,7 @@ weightBeforeZipCode=200000;
 				}
 				productInnerDiv.append(productPriceDiv);
 				if(val.customFields["Webshop tilbud"] == "true"){
-					productTilbud = $('<div class="tilbud-icon"><a href="#"></a></div>');
+					productTilbud = $('<div class="tilbud-icon"></div>');
 					productInnerDiv.append(productTilbud);
 				}
 
