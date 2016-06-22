@@ -15,11 +15,11 @@ weightBeforeZipCode=200000;
 	this.JsonProductList = function (selector, serviceUrl, testMode) {
 		selector = "#" + selector;
 		var getUrl = '';
-        var filters = {};
-        this.loadCompleted = 'JsonProductListLoadCompleted';
-        this.jsonData = null;
-        var me = this;
-        this.fetchEarly = false;
+		var filters = {};
+		this.loadCompleted = 'JsonProductListLoadCompleted';
+		this.jsonData = null;
+		var me = this;
+		this.fetchEarly = false;
 
 		goToPage(serviceUrl);
 
@@ -143,53 +143,57 @@ weightBeforeZipCode=200000;
 				productImageDiv.append(productLink);
 				productInnerDiv.append(productImageDiv);
 
-                productnameDiv = $("<div></div>");
-                productnameDiv.addClass("productName");
-                productNameLnk = $("<a></a>");
-                productNameLnk.attr("href",val.URLPathAndQuery);
-                productNameLnk.text(val.name);
-                productnameDiv.append(productNameLnk);
-                productInnerDiv.append(productnameDiv);
+				productnameDiv = $("<div></div>");
+				productnameDiv.addClass("productName");
+				productNameLnk = $("<a></a>");
+				productNameLnk.attr("href",val.URLPathAndQuery);
+				productNameLnk.text(val.name);
+				productnameDiv.append(productNameLnk);
+				productInnerDiv.append(productnameDiv);
 
-                productDescriptionDiv = $('<div></div>');
-                productDescriptionDiv.addClass('productDescriptionDiv');
-                productDescriptionLnk = $('<a></a>');
-                productDescriptionLnk.attr('href', val.URLPathAndQuery);
+				productDescriptionDiv = $('<div></div>');
+				productDescriptionDiv.addClass('productDescriptionDiv');
+				productDescriptionLnk = $('<a></a>');
+				productDescriptionLnk.attr('href', val.URLPathAndQuery);
 				if(val.customFields === undefined || val.customFields === null || val.customFields.length === 0) {}
 				else {
 					if(val.customFields["shortDesc"] === undefined || val.customFields["shortDesc"] === null || val.customFields["shortDesc"] === 0) {}
 					else {
-                		productDescriptionLnk.append(val.customFields["shortDesc"]);
+						productDescriptionLnk.append(val.customFields["shortDesc"]);
 					}
 				}
-                productDescriptionDiv.append(productDescriptionLnk);
-                productInnerDiv.append(productDescriptionDiv);
+				productDescriptionDiv.append(productDescriptionLnk);
+				productInnerDiv.append(productDescriptionDiv);
 
-                productPrevPriceDiv = $('<a></a>');
-                productPrevPriceDiv.attr('href', val.URLPathAndQuery);
-                productPrevPriceDiv.addClass('productPrevPriceDiv');
-                if(val.hasSalesPrice.length != 0) {
-                    if(val.hasSalesPrice == true) {
-                        if(!val.salesPrices[0].hasPreviousPrice == false) {
-                            productPrevPriceDiv.append(val.salesPrices[0].previousTagPriceFormatted);
-                        }
-                    }
-                }
-                productInnerDiv.append(productPrevPriceDiv);
+				productPrevPriceDiv = $('<a></a>');
+				productPrevPriceDiv.attr('href', val.URLPathAndQuery);
+				productPrevPriceDiv.addClass('productPrevPriceDiv');
+				if(val.hasSalesPrice.length != 0) {
+					if(val.hasSalesPrice == true) {
+						if(!val.salesPrices[0].hasPreviousPrice == false) {
+							productPrevPriceDiv.append(val.salesPrices[0].previousTagPriceFormatted);
+						}
+					}
+				}
+				productInnerDiv.append(productPrevPriceDiv);
 
-                productPriceDiv = $('<a></a>');
-                productPriceDiv.attr('href', val.URLPathAndQuery);
-                productPriceDiv.addClass('productPriceDiv');
-                if(val.hasSalesPrice.length != 0) {
-                    if(!val.hasSalesPrice == false) {
-                        productPriceDiv.append(val.salesPrices[0].tagPriceFormatted);
-                    }
-                }
-                productInnerDiv.append(productPriceDiv);
+				productPriceDiv = $('<a></a>');
+				productPriceDiv.attr('href', val.URLPathAndQuery);
+				productPriceDiv.addClass('productPriceDiv');
+				if(val.hasSalesPrice.length != 0) {
+					if(!val.hasSalesPrice == false) {
+						productPriceDiv.append(val.salesPrices[0].tagPriceFormatted);
+					}
+				}
+				productInnerDiv.append(productPriceDiv);
+				if(val.customFields["Webshop tilbud"] == "true"){
+					productTilbud = $('<div class="tilbud-icon"><a href="#"></a></div>');
+					productInnerDiv.append(productTilbud);
+				}
 
 				if($('#favoriteProductsJsonBdy').length > 0){
 					productInnerDiv.append(basketQtyInput);
-                	productInnerDiv.append(basketDiv);
+					productInnerDiv.append(basketDiv);
 					productRemoveFromFavorites = $('<a></a>');
 					productRemoveFromFavorites.append('X');
 					productRemoveFromFavorites.addClass('productRemoveFromFavorites');
@@ -198,37 +202,37 @@ weightBeforeZipCode=200000;
 				}
 				else {
 					//productInnerDiv.append(basketQtyInput);
-                	//productInnerDiv.append(basketDiv);
+					//productInnerDiv.append(basketDiv);
 				}
 
-                if(val.greatBuy != false) {
-                    goodDeal = $('<a></a>');
-                    goodDeal.attr('href', val.URLPathAndQuery);
-                    goodDeal.addClass('goodDeal');
-                    goodDeal.append($('.hiddenText .goodDealText').text());
-                    productInnerDiv.append(goodDeal);
-                }
+				if(val.greatBuy != false) {
+					goodDeal = $('<a></a>');
+					goodDeal.attr('href', val.URLPathAndQuery);
+					goodDeal.addClass('goodDeal');
+					goodDeal.append($('.hiddenText .goodDealText').text());
+					productInnerDiv.append(goodDeal);
+				}
 
-                if(val.deprecated != false) {
-                    deprecatedProduct = $('<a></a>');
-                    deprecatedProduct.attr('href', val.URLPathAndQuery);
-                    deprecatedProduct.addClass('deprecatedProduct');
-                    deprecatedProduct.append($('.hiddenText .deprecatedText').text());
-                    productInnerDiv.append(deprecatedProduct);
-                }
+				if(val.deprecated != false) {
+					deprecatedProduct = $('<a></a>');
+					deprecatedProduct.attr('href', val.URLPathAndQuery);
+					deprecatedProduct.addClass('deprecatedProduct');
+					deprecatedProduct.append($('.hiddenText .deprecatedText').text());
+					productInnerDiv.append(deprecatedProduct);
+				}
 
 				if(val.noveltyProduct != false) {
-                    noveltyProduct = $('<a></a>');
-                    noveltyProduct.attr('href', val.URLPathAndQuery);
-                    noveltyProduct.addClass('noveltyProduct');
-                    noveltyProduct.append($('.hiddenText .noveltyProductText').text());
-                    productInnerDiv.append(noveltyProduct);
-                }
+					noveltyProduct = $('<a></a>');
+					noveltyProduct.attr('href', val.URLPathAndQuery);
+					noveltyProduct.addClass('noveltyProduct');
+					noveltyProduct.append($('.hiddenText .noveltyProductText').text());
+					productInnerDiv.append(noveltyProduct);
+				}
 
-                productDiv.append(productInnerDiv);
-                $(selector + " > .products").append(productDiv);
+				productDiv.append(productInnerDiv);
+				$(selector + " > .products").append(productDiv);
 
-            });
+			});
 
 			//Check if related products has products if yes then show
 			if($('#relatedProductsList').length > 0) {
@@ -260,7 +264,7 @@ weightBeforeZipCode=200000;
 
 			updateUrl();
 
-            if($('#frontPageProductsBdy.jsonProducts').length > 0){
+			if($('#frontPageProductsBdy.jsonProducts').length > 0){
 				var screen = $(window).width();
 				if(screen <= 640) {
 					$('#frontPageProductsBdy.jsonProducts .products').slick({
@@ -292,7 +296,7 @@ weightBeforeZipCode=200000;
 						autoplaySpeed: 2000,
 					});
 				};
-            }
+			}
 
 			if($('#frontPageProductsMostSoldBdy.jsonProducts').length > 0){
 				var screen = $(window).width();
@@ -326,7 +330,7 @@ weightBeforeZipCode=200000;
 						autoplaySpeed: 2000,
 					});
 				};
-            }
+			}
 
 			if($('#basketProductsBdy.jsonProducts').length > 0){
 				var screen = $(window).width();
@@ -360,7 +364,7 @@ weightBeforeZipCode=200000;
 						autoplaySpeed: 2000,
 					});
 				};
-            }
+			}
 
 			if($('#goodMatchProductsList.jsonProducts').length > 0){
 				var screen = $(window).width();
@@ -394,11 +398,11 @@ weightBeforeZipCode=200000;
 						autoplaySpeed: 2000,
 					});
 				};
-            }
+			}
 
-            prefetch = $("<link></link>");
-            prefetch.attr("rel","prefetch");
-            if(jsondata.data.previousLink && jsondata.data.previousLink.length>0){
+			prefetch = $("<link></link>");
+			prefetch.attr("rel","prefetch");
+			if(jsondata.data.previousLink && jsondata.data.previousLink.length>0){
 				prefetch.attr("href",document.location.protocol + "//" + document.location.hostname + jsondata.data.previousLink);
 				prefetch.appendTo("head");
 			}
@@ -407,11 +411,11 @@ weightBeforeZipCode=200000;
 				prefetch.appendTo("head");
 			}
 
-        }
+		}
 
-        function goToPage(url) {
+		function goToPage(url) {
 
-            getUrl = url;
+			getUrl = url;
 			fetchEarly = false;
 			if(getUrl.indexOf("p=1&")!=-1&&getUrl.indexOf("rp=72")==-1){
 				fetchEarly = true;
@@ -463,138 +467,138 @@ weightBeforeZipCode=200000;
 		}
 
 		function setPager(currentPage, previousPage, nextPage, totalPages) {
-            if(!$("div.pager")||$("div.pager").length<1){
-                plist = $("<div></div>");
-                plist.addClass("pager");
-                plist.addClass("clearfix");
-                plist2 = plist.clone();
-                $(".jsonProducts").prepend(plist);
-                $(".jsonProducts").append(plist2);
-            }
-            var target = $("div.pager");
-            target.empty();
-            if (previousPage && previousPage.length > 0) {
-                var pageLink = $("<a href='javascript:void(0);' class='previousPageLnk active' data-URLPathAndQuery='" + previousPage + "'><span class='icon prev'></span>" + PrevPageText + "</a></div>");
-                pageLink.click(function () {
-                    $(window).scrollTop(0);
-                    //jQuery.bbq.pushState("page="+getUrlVars(previousPage)["p"]);
-                    goToPage(previousPage.replace("&imgSizeId=0",""));
-                });
-                target.append(pageLink);
-            }
-            else {
-                var pageLink = $("<a href='javascript:void(0);' class='previousPageLnk notActive' data-URLPathAndQuery='" + previousPage + "'><span class='icon prev'></span>" + PrevPageText + "</a></div>");
-                target.append(pageLink);
-            }
+			if(!$("div.pager")||$("div.pager").length<1){
+				plist = $("<div></div>");
+				plist.addClass("pager");
+				plist.addClass("clearfix");
+				plist2 = plist.clone();
+				$(".jsonProducts").prepend(plist);
+				$(".jsonProducts").append(plist2);
+			}
+			var target = $("div.pager");
+			target.empty();
+			if (previousPage && previousPage.length > 0) {
+				var pageLink = $("<a href='javascript:void(0);' class='previousPageLnk active' data-URLPathAndQuery='" + previousPage + "'><span class='icon prev'></span>" + PrevPageText + "</a></div>");
+				pageLink.click(function () {
+					$(window).scrollTop(0);
+					//jQuery.bbq.pushState("page="+getUrlVars(previousPage)["p"]);
+					goToPage(previousPage.replace("&imgSizeId=0",""));
+				});
+				target.append(pageLink);
+			}
+			else {
+				var pageLink = $("<a href='javascript:void(0);' class='previousPageLnk notActive' data-URLPathAndQuery='" + previousPage + "'><span class='icon prev'></span>" + PrevPageText + "</a></div>");
+				target.append(pageLink);
+			}
 
 
 			if(currentPage && totalPages){
 				pagecount = $("<span class='pagecountspan'></span>");
 				pagecount.text(PageNo + " " + currentPage + " " + PageOf + " " + totalPages);
-                multipage = $("<span></span>");
-                multipage.addClass('multipageBdy');
+				multipage = $("<span></span>");
+				multipage.addClass('multipageBdy');
 
-                for(i=1;i<=totalPages;i++){
-                    pagelink = $("<span></span>");
-                    pagelink.attr("data-index",i)
-                    pagelink.attr("data-currentPage",productList);
-                    pagelink.text(i);
-                    if(i==currentPage){
-                        pagelink.addClass("currentpage");
-                    }
-                    pagelink.click(function(){
-                        //alert($(this).attr("data-index"));
-                        //jQuery.bbq.pushState("page="+$(this).attr("data-index"));
-                        goToPage($(this).attr("data-currentPage").replace($(this).attr("data-currentPage").match(/&p=([0-9]{1,2})/)[0],"&p=" + $(this).attr("data-index")));
-                    });
-                    multipage.append(pagelink);
-                }
-                target.append(multipage);
-                target.append(pagecount);
+				for(i=1;i<=totalPages;i++){
+					pagelink = $("<span></span>");
+					pagelink.attr("data-index",i)
+					pagelink.attr("data-currentPage",productList);
+					pagelink.text(i);
+					if(i==currentPage){
+						pagelink.addClass("currentpage");
+					}
+					pagelink.click(function(){
+						//alert($(this).attr("data-index"));
+						//jQuery.bbq.pushState("page="+$(this).attr("data-index"));
+						goToPage($(this).attr("data-currentPage").replace($(this).attr("data-currentPage").match(/&p=([0-9]{1,2})/)[0],"&p=" + $(this).attr("data-index")));
+					});
+					multipage.append(pagelink);
+				}
+				target.append(multipage);
+				target.append(pagecount);
 			}
 
 
-            if (nextPage && nextPage.length > 0) {
-                var nextLink = $("<a href='javascript:void(0);' class='nextPageLnk' data-URLPathAndQuery='" + nextPage + "'>" + NextPageText + "<span class='icon next'><div style='clear:both;'></div></span></a>");
-                nextLink.click(function () {
-                    $(window).scrollTop(0);
-                    //jQuery.bbq.pushState("page="+getUrlVars(nextPage)["p"]);
-                    goToPage(nextPage.replace("&imgSizeId=0",""));
-                });
-                target.append(nextLink);
-            }
+			if (nextPage && nextPage.length > 0) {
+				var nextLink = $("<a href='javascript:void(0);' class='nextPageLnk' data-URLPathAndQuery='" + nextPage + "'>" + NextPageText + "<span class='icon next'><div style='clear:both;'></div></span></a>");
+				nextLink.click(function () {
+					$(window).scrollTop(0);
+					//jQuery.bbq.pushState("page="+getUrlVars(nextPage)["p"]);
+					goToPage(nextPage.replace("&imgSizeId=0",""));
+				});
+				target.append(nextLink);
+			}
 
 
-         target.first().addClass("first");
-         target.last().addClass("last");
+		 target.first().addClass("first");
+		 target.last().addClass("last");
 
-            if(totalPages <= 1) {
-                $('.jsonProducts .pager.last').hide();
-            }
-            else {
-                $('.jsonProducts .pager.last').show();
-            }
+			if(totalPages <= 1) {
+				$('.jsonProducts .pager.last').hide();
+			}
+			else {
+				$('.jsonProducts .pager.last').show();
+			}
 
-            //if(totalPages == "1") {
-              //  $('.jsonProducts .pager').remove();
-            //}
+			//if(totalPages == "1") {
+			  //  $('.jsonProducts .pager').remove();
+			//}
 
-        }
-        function getUrlVars(url) {
-            var vars = {};
-            var parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-            function(m,key,value) {
-            vars[key] = value;
-            });
-            return vars;
-        }
-        /*
-        Handles loading of next page
-        */
+		}
+		function getUrlVars(url) {
+			var vars = {};
+			var parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+			function(m,key,value) {
+			vars[key] = value;
+			});
+			return vars;
+		}
+		/*
+		Handles loading of next page
+		*/
 
 
-				    this.SetFilters = function (key, values) {
-            filters[key] = values;
-            updateUrl();
-            goToPage(getUrl);
-        };
-        this.SetSorting = function (option) {
-            sortingOption = option;
-            updateUrl();
-            goToPage(getUrl);
-        };
-        var sortingOption = "";
+					this.SetFilters = function (key, values) {
+			filters[key] = values;
+			updateUrl();
+			goToPage(getUrl);
+		};
+		this.SetSorting = function (option) {
+			sortingOption = option;
+			updateUrl();
+			goToPage(getUrl);
+		};
+		var sortingOption = "";
 
-        this.SetResultsPerPage = function (option) {
-            rpOption = option;
-            updateUrl();
-            goToPage(getUrl);
-        };
+		this.SetResultsPerPage = function (option) {
+			rpOption = option;
+			updateUrl();
+			goToPage(getUrl);
+		};
 
-        var rpOption = "";
-            this.updateUrl = function() {
-            var params = getUrlParts(getUrl);
+		var rpOption = "";
+			this.updateUrl = function() {
+			var params = getUrlParts(getUrl);
 
-            for (var key in filters) {
-                var val = "";
-                if (filters[key]) {
-                    val = filters[key];
-                }
+			for (var key in filters) {
+				var val = "";
+				if (filters[key]) {
+					val = filters[key];
+				}
 
-                var filterKey = "";
-                var i = 1;
-                for (i; i < 100; i++) {
-                    filterKey = "fn" + i;
-                    if (params[filterKey] && params[filterKey] != key) {
-                        continue;
-                    } else {
-                        break;
-                    }
-                }
-                params[filterKey] = key;
-                params["fv" + i] = val;
+				var filterKey = "";
+				var i = 1;
+				for (i; i < 100; i++) {
+					filterKey = "fn" + i;
+					if (params[filterKey] && params[filterKey] != key) {
+						continue;
+					} else {
+						break;
+					}
+				}
+				params[filterKey] = key;
+				params["fv" + i] = val;
 
-            }
+			}
 
 				params["so"] = sortingOption;
 				if(rpOption){
@@ -603,8 +607,8 @@ weightBeforeZipCode=200000;
 				getUrl = getPathFromUrl(getUrl) + "?" + $.param(params);
 			}
 
-        function getPathFromUrl(url) {
-            return url.split("?")[0];
+		function getPathFromUrl(url) {
+			return url.split("?")[0];
 		}
 	};
 })({}, jQuery);
@@ -713,12 +717,12 @@ function ChangeCurrentLanguage(oSelect){
 }
 
 function updateUrl(){
-    targetelement = $('.jsonProducts').attr('id');
-    $('.sortingContainer .sortOptions').on('change', function (e) {
-        newSortOption = "so=";
-        newSortOption += $("option:selected", this).attr('value');
-        JsonProductList(targetelement, productList.replace(/so=([0-9]*)/,newSortOption), true);
-    });
+	targetelement = $('.jsonProducts').attr('id');
+	$('.sortingContainer .sortOptions').on('change', function (e) {
+		newSortOption = "so=";
+		newSortOption += $("option:selected", this).attr('value');
+		JsonProductList(targetelement, productList.replace(/so=([0-9]*)/,newSortOption), true);
+	});
 }
 
 if($('.frontPageProductsMostSold').length > 0){
@@ -754,7 +758,7 @@ function createAddedToBasketProducts() {
 		$.getJSON(addedToBasketGoodOffers, function(jsondata) {
 
 			var productCount=0;
-            $.each(jsondata.data.items, function(key, val) {
+			$.each(jsondata.data.items, function(key, val) {
 
 				//Make sure to get the correct stock message
 				var deliveryData = "nothing";
@@ -833,21 +837,21 @@ function createAddedToBasketProducts() {
 				productImageDiv.append(productLink);
 				productInnerDiv.append(productImageDiv);
 
-                productnameDiv = $("<div></div>");
-                productnameDiv.addClass("productName");
-                productNameLnk = $("<a></a>");
-                productNameLnk.attr("href",val.URLPathAndQuery);
+				productnameDiv = $("<div></div>");
+				productnameDiv.addClass("productName");
+				productNameLnk = $("<a></a>");
+				productNameLnk.attr("href",val.URLPathAndQuery);
 				productName = val.name;
 				productName = productName.substring(0,16);
 				productName = productName + "...";
-                productNameLnk.text(productName);
-                productnameDiv.append(productNameLnk);
-                productInnerDiv.append(productnameDiv);
+				productNameLnk.text(productName);
+				productnameDiv.append(productNameLnk);
+				productInnerDiv.append(productnameDiv);
 
-                productDescriptionDiv = $('<div></div>');
-                productDescriptionDiv.addClass('productDescriptionDiv');
-                productDescriptionLnk = $('<a></a>');
-                productDescriptionLnk.attr('href', val.URLPathAndQuery);
+				productDescriptionDiv = $('<div></div>');
+				productDescriptionDiv.addClass('productDescriptionDiv');
+				productDescriptionLnk = $('<a></a>');
+				productDescriptionLnk.attr('href', val.URLPathAndQuery);
 				if(val.customFields === undefined || val.customFields === null || val.customFields.length === 0) {}
 				else {
 					if(val.customFields["shortDesc"] === undefined || val.customFields["shortDesc"] === null || val.customFields["shortDesc"] === 0) {}
@@ -855,55 +859,55 @@ function createAddedToBasketProducts() {
 						productDescription = val.customFields["shortDesc"]
 						productDescription = productDescription.substring(0,16);
 						productDescription = productDescription + "...";
-                		productDescriptionLnk.append(productDescription);
+						productDescriptionLnk.append(productDescription);
 					}
 				}
-                productDescriptionDiv.append(productDescriptionLnk);
-                productInnerDiv.append(productDescriptionDiv);
+				productDescriptionDiv.append(productDescriptionLnk);
+				productInnerDiv.append(productDescriptionDiv);
 
-                productPrevPriceDiv = $('<a></a>');
-                productPrevPriceDiv.attr('href', val.URLPathAndQuery);
-                productPrevPriceDiv.addClass('productPrevPriceDiv');
-                if(val.hasSalesPrice.length != 0) {
-                    if(val.hasSalesPrice == true) {
-                        if(!val.salesPrices[0].hasPreviousPrice == false) {
-                            productPrevPriceDiv.append(val.salesPrices[0].previousTagPriceFormatted);
-                        }
-                    }
-                }
-                productInnerDiv.append(productPrevPriceDiv);
+				productPrevPriceDiv = $('<a></a>');
+				productPrevPriceDiv.attr('href', val.URLPathAndQuery);
+				productPrevPriceDiv.addClass('productPrevPriceDiv');
+				if(val.hasSalesPrice.length != 0) {
+					if(val.hasSalesPrice == true) {
+						if(!val.salesPrices[0].hasPreviousPrice == false) {
+							productPrevPriceDiv.append(val.salesPrices[0].previousTagPriceFormatted);
+						}
+					}
+				}
+				productInnerDiv.append(productPrevPriceDiv);
 
-                productPriceDiv = $('<a></a>');
-                productPriceDiv.attr('href', val.URLPathAndQuery);
-                productPriceDiv.addClass('productPriceDiv');
-                if(val.hasSalesPrice.length != 0) {
-                    if(!val.hasSalesPrice == false) {
-                        productPriceDiv.append(val.salesPrices[0].tagPriceFormatted);
-                    }
-                }
-                productInnerDiv.append(productPriceDiv);
+				productPriceDiv = $('<a></a>');
+				productPriceDiv.attr('href', val.URLPathAndQuery);
+				productPriceDiv.addClass('productPriceDiv');
+				if(val.hasSalesPrice.length != 0) {
+					if(!val.hasSalesPrice == false) {
+						productPriceDiv.append(val.salesPrices[0].tagPriceFormatted);
+					}
+				}
+				productInnerDiv.append(productPriceDiv);
 
-                //productInnerDiv.append(basketQtyInput);
-                //productInnerDiv.append(basketDiv);
+				//productInnerDiv.append(basketQtyInput);
+				//productInnerDiv.append(basketDiv);
 
-                if(val.greatBuy != false) {
-                    goodDeal = $('<a></a>');
-                    goodDeal.attr('href', val.URLPathAndQuery);
-                    goodDeal.addClass('goodDeal');
-                    goodDeal.append($('.hiddenText .goodDealText').text());
-                    productInnerDiv.append(goodDeal);
-                }
+				if(val.greatBuy != false) {
+					goodDeal = $('<a></a>');
+					goodDeal.attr('href', val.URLPathAndQuery);
+					goodDeal.addClass('goodDeal');
+					goodDeal.append($('.hiddenText .goodDealText').text());
+					productInnerDiv.append(goodDeal);
+				}
 
-                if(val.noveltyProduct != false) {
-                    noveltyProduct = $('<a></a>');
-                    noveltyProduct.attr('href', val.URLPathAndQuery);
-                    noveltyProduct.addClass('noveltyProduct');
-                    noveltyProduct.append($('.hiddenText .noveltyProductText').text());
-                    productInnerDiv.append(noveltyProduct);
-                }
+				if(val.noveltyProduct != false) {
+					noveltyProduct = $('<a></a>');
+					noveltyProduct.attr('href', val.URLPathAndQuery);
+					noveltyProduct.addClass('noveltyProduct');
+					noveltyProduct.append($('.hiddenText .noveltyProductText').text());
+					productInnerDiv.append(noveltyProduct);
+				}
 
-                productDiv.append(productInnerDiv);
-                $('#ucInfoMessageContentProducts').append(productDiv);
+				productDiv.append(productInnerDiv);
+				$('#ucInfoMessageContentProducts').append(productDiv);
 
 			});
 
@@ -939,7 +943,7 @@ function createAddedToBasketProducts() {
 						autoplaySpeed: 2000,
 					});
 				};
-            }
+			}
 
 		});
 

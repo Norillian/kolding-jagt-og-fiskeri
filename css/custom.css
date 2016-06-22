@@ -1666,6 +1666,21 @@
 	.jsonProducts .productInnerDiv {
 		position: relative;
 	}
+	.jsonProducts .productInnerDiv .tilbud-icon{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 5;
+	}
+	.jsonProducts .productInnerDiv .tilbud-icon a{
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: url(/media/121/img/webshopOffers.png) no-repeat;
+		background-size: cover;
+		transition: all 0.5s ease;
+	}
+	.jsonProducts .productInnerDiv .tilbud-icon a:hover{opacity:0.6; }
 
 	.jsonProducts .productInnerDiv .noveltyProduct {
 		position: absolute;
