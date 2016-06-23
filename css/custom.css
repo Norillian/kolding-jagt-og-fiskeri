@@ -1666,6 +1666,7 @@
 	.jsonProducts .productInnerDiv {
 		position: relative;
 	}
+	.imageBdy .tilbud-icon,
 	.jsonProducts .productInnerDiv .tilbud-icon{
 		position: absolute;
 		top: 10px;
@@ -1675,6 +1676,10 @@
 		height: 50px;
 		background: url(/media/121/img/webshopOffers.png) no-repeat;
 		background-size: cover;
+	}
+	.imageBdy .tilbud-icon{
+		right: auto;
+		left: 10px;
 	}
 	.jsonProducts .productInnerDiv .noveltyProduct {
 		position: absolute;
