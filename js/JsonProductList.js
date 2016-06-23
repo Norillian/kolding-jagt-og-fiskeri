@@ -726,7 +726,7 @@ function updateUrl(){
 }
 
 if($('.frontPageProductsMostSold').length > 0){
-	productList = '/Services/ProductService.asmx/ProductList?v=1.0&lId=0&so=' + so + '&cId=' + cId + '&langId=' + langId + '&countryId=' + contId +  '&locId=' + locId + '&customerId=0&mId=&p=1&rp=50&imgSizeId=0&fn1=CustomFields&fk1=3&fv1=true';
+	productList = '/Services/ProductService.asmx/ProductList?v=1.0&lId=0&so=' + so + '&cId=' + cId + '&langId=' + langId + '&countryId=' + contId +  '&locId=' + locId + '&customerId=0&mId=&p=1&rp=50&imgSizeId=0&fn1=CustomFields&fk1=tilbud&fv1=true';
 	targetelement = $(".frontpageMostSold").attr("id");
 
 	productList += '&serial=' + serial;
