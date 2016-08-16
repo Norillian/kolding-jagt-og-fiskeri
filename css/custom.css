@@ -2222,6 +2222,10 @@
 		bottom:0;
 	}
 
+	#bottom .bottomPaneQuickLinks .accordion-navigation {
+		padding-left: 13em;
+	}
+
 	/*** Basket step 1 styles ***/
 
 	.basketTopNavBdy .basketHeader h1 {
@@ -3223,6 +3227,10 @@
 		width:100%;
 		height:auto;
 	}
+	#bottom .bottomPaneQuickLinks .accordion-navigation {
+		align-content: center;
+		padding-left: 0;
+	}
 
 	/*** Mobile topmenu styles ***/
 
@@ -3896,6 +3904,12 @@
 	#bottom .accordion-navigation {
 		width: 33%;
 	}
+	#bottom .bottomPaneQuickLinks .accordion-navigation {
+		align-content: center;
+		padding-left: 5em;
+		padding-bottom: 0;
+	}
+
 
 	/*** Json productlist styles ***/
 
