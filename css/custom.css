@@ -1386,7 +1386,7 @@
 		text-transform: uppercase;
 	}
 
-	.categoryListBdy li:hover {
+	.categoryListBdy li {
 		box-shadow: 0px 0px 0px 1px #e6e6e6 inset;
 	}
 
@@ -1730,7 +1730,7 @@
 		vertical-align:top;
 	}
 
-	.jsonProducts .productElement:hover {
+	.jsonProducts .productElement {
 		box-shadow: 0px 0px 0px 1px #e6e6e6 inset;
 	}
 
@@ -1758,13 +1758,17 @@
 		display: block;
 		padding: 0 0.9375rem;
 		text-decoration: none;
-		min-height: 77px;
+		min-height: 48px;
+	}
+
+	.jsonProducts .productElement .productName a:hover {
+		text-decoration: underline;
 	}
 
 	.jsonProducts .productElement .productDescriptionDiv a {
 		color: #999;
 		font-size: 12px;
-		display: block;
+		display: none;
 		padding: 0 0.9375rem;
 		text-decoration: none;
 		min-height: 38px;
@@ -1813,6 +1817,7 @@
 		text-decoration: none;
 		min-height: 26px;
 		vertical-align: middle;
+		background-color: #e6e6e6;
 	}
 
 	.productElement .basketQtyInput,
