@@ -1727,6 +1727,8 @@
 		width: 50%;
 		display:inline-block;
 		vertical-align:top;
+		float: none;
+		margin-left: -1px;
 	}
 
 	.jsonProducts .productElement {
@@ -1755,7 +1757,8 @@
 		font-size: 16px;
 		text-transform: uppercase;
 		display: block;
-		padding: 0 0.9375rem;
+		padding: 0.2rem 0.9375rem;
+		margin-bottom: 0.5em;
 		text-decoration: none;
 		min-height: 48px;
 	}
@@ -1804,6 +1807,10 @@
 		text-decoration: line-through;
 		vertical-align: middle;
 		line-height: 12px;
+		position: absolute;
+		bottom: 42px;
+		left: 0;
+		right: 0;
 	}
 
 	.jsonProducts .productElement .productPriceDiv {
@@ -1812,7 +1819,7 @@
 		text-transform: uppercase;
 		display: inline-block;
 		width: 100%;
-		padding: 0rem 0.25rem 0.75rem 0.25rem;
+		padding: 0.3rem 0.25rem 0.3rem 0.25rem;
 		text-decoration: none;
 		min-height: 26px;
 		vertical-align: middle;
@@ -3395,6 +3402,11 @@
 
 	.pagecountspan {
 		padding-bottom: 0.5rem;
+	}
+
+	[class*="block-grid-"]>li,
+	.jsonProducts .productElement {
+		margin-left: 0;
 	}
 
 	.jsonProducts {
