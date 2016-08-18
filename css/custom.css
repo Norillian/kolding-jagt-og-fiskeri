@@ -3550,7 +3550,8 @@
 
 	.ucImageControl img {
 		max-width: 280px !important;
-		width: 100% !important;
+		width: auto !important;
+		max-height:390px;
 	}
 
 	.productInfoBackDiv {
