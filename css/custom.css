@@ -1747,12 +1747,14 @@
 		padding: 0.9375rem;
 		display:block;
 		vertical-align: middle;
-		max-height:330px;
+		height:220px;
 		width: auto !important;
 	}
 
 	.jsonProducts .productElement .productImage a img {
 		margin: 0 auto;
+    max-height: 150px;
+    width:auto;
 	}
 
 	.jsonProducts .productElement .productName a {
@@ -1811,7 +1813,7 @@
 		vertical-align: middle;
 		line-height: 12px;
 		position: absolute;
-		bottom: 42px;
+		bottom: 35px;
 		left: 0;
 		right: 0;
 	}
