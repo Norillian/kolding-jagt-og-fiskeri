@@ -1728,7 +1728,11 @@
 		display:inline-block;
 		vertical-align:top;
 		float: none;
-		margin-left: -1px;
+	}
+
+	[class*="block-grid-"]>li:not(:first-child),
+	.jsonProducts .productElement {
+  	margin-left: -1px;
 	}
 
 	.jsonProducts .productElement {
