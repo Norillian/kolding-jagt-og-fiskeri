@@ -1809,6 +1809,7 @@
 		font-size: 11px;
 		text-transform: uppercase;
 		display: inline-block;
+		padding-top: 0.5rem;
 		text-decoration: line-through;
 		vertical-align: middle;
 		line-height: 10px;
