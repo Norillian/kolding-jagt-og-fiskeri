@@ -1749,6 +1749,7 @@
 		vertical-align: middle;
 		height:220px;
 		width: auto !important;
+		margin-bottom: -3rem;
 	}
 
 	.jsonProducts .productElement .productImage a img {
@@ -1762,7 +1763,7 @@
 		font-size: 16px;
 		text-transform: uppercase;
 		display: block;
-		padding: 0.2rem 0.9375rem;
+		padding: 0rem 0.9375rem;
 		margin-bottom: 0.5em;
 		text-decoration: none;
 		min-height: 48px;
@@ -1808,10 +1809,9 @@
 		font-size: 11px;
 		text-transform: uppercase;
 		display: inline-block;
-		padding: 0.5rem 0 0 0;
 		text-decoration: line-through;
 		vertical-align: middle;
-		line-height: 12px;
+		line-height: 10px;
 		position: absolute;
 		bottom: 35px;
 		left: 0;
