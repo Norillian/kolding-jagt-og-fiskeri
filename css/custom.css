@@ -1601,12 +1601,14 @@
 	}
 
 	#frontPageProductsBdy .pager,
-	#frontPageProductsMostSoldBdy .pager {
+	#frontPageProductsMostSoldBdy .pager,
+	#frontPageProductsOnlyWebshop .pager {
 		display: none;
 	}
 
 	.frontPageProducts h3,
 	.frontPageProductsMostSold h3,
+	.frontPageProductsOnlyWebshop h3,
 	.basketProducts h3,
 	.relatedProducts h3,
 	.productsGoodMatch h3 {
