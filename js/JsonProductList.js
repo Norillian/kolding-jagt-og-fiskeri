@@ -783,6 +783,20 @@ if($('.productsGoodMatch').length > 0){
 	}
 }
 
+if($('.frontPageProductsOnlyWebshop').length > 0){
+	productList = '/Services/ProductService.asmx/ProductList?v=1.0&lId=0&so=' + so + '&cId=' + cId + '&langId=' + langId + '&countryId=' + contId +  '&locId=' + locId + '&customerId=0&mId=&p=1&rp=50&imgSizeId=0&fn1=CustomFields&fk1=4&fv1=true';
+	targetelement = $("#frontPageProductsOnlyWebshop").attr("id");
+
+	productList += '&serial=' + serial;
+
+	jsonProductList = new JsonProductList(targetelement, productList, true);
+	function ChangeCurrentLanguage(oSelect){
+		window.location.href=window.location.pathname + '?' + pageQuery.toString();
+	}
+}
+
+
+
 function createAddedToBasketProducts() {
 	if($('.ucInfoMessageContent').length > 0){
 		addedToBasketGoodOffers = '/Services/ProductService.asmx/ProductList?v=1.0&lId=0&so=' + so + '&cId=' + cId + '&langId=' + langId + '&countryId=' + contId +  '&locId=' + locId + '&customerId=0&mId=&p=1&rp=72&imgSizeId=0&fn1=CustomFields&fk1=3&fv1=true';
