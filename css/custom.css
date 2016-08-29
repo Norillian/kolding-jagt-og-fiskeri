@@ -3391,7 +3391,6 @@
 	  text-align:center;
 	}
 
-
 	.jsonProducts.frontpageNews .productElement,
 	.jsonProducts.frontpageMostSold .productElement,
 	.jsonProducts.frontpageProductsOnlyWebshop .productElement  {
@@ -3509,6 +3508,16 @@
 	/*** Follow us should always be visible on mobile ***/
 	.accordion-navigation.socialMedia a {
 		border-bottom: medium none;
+		margin-right: 5px;
+	}
+
+	.accordion-navigation.socialMedia .content li{
+		float: left;
+		vertical-align: middle;
+	}
+
+	#bottom .accordion-navigation.socialMedia ul{
+		margin-bottom: 15px;
 	}
 
 	.accordion-navigation.socialMedia #bottomSocialMedia {
@@ -3571,7 +3580,7 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 66px;
+		top: 96px;
 	}
 
 	#main #ShopContent .ucImageControl {
@@ -3872,7 +3881,7 @@
 		font-size: 12px;
 	}
 
-	#bottom .accordion-navigation.socialMedia div {
+	#bottom .accordion-navigation.socialMedia li {
 		float: left;
 	}
 
@@ -3949,6 +3958,7 @@
 		padding-left: 5em;
 		padding-bottom: 0;
 	}
+
   #topMenuQuickLinks > ul > li > a{
 
     font-size: 12px;
