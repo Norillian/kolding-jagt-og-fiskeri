@@ -3391,6 +3391,13 @@
 	  text-align:center;
 	}
 
+
+	.jsonProducts.frontpageNews .productElement,
+	.jsonProducts.frontpageMostSold .productElement,
+	.jsonProducts.frontpageProductsOnlyWebshop .productElement  {
+		float: left;
+	}
+
 	/*** Product list styles ***/
 
 	.productFilteringHeaderBdy,
@@ -3464,6 +3471,7 @@
 	.productElement .basketQtyInput {
 		display: none;
 	}
+
 
 	/*** Mobile bottompane styles ***/
 
