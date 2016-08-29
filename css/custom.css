@@ -3864,6 +3864,10 @@
 		font-size: 12px;
 	}
 
+	#bottom .accordion-navigation.socialMedia div {
+		float: left;
+	}
+
 	#bottom .accordion-navigation > a {
 		font-size: 18px;
 		font-weight: bold;
