@@ -436,6 +436,10 @@
 		border-radius: 0px !important;
 	}
 
+	input#ctl00_plhContent_ctl10_ctl03_txtZipcode {
+		height: 30px;
+	}
+
 	input[type="text"],
 	input[type="password"],
 	input[type="date"],
@@ -3866,7 +3870,6 @@
 	#bottom .accordion-navigation {
 		float:left;
 		background-color: transparent;
-		width: 25%;
 	}
 
 	#bottom .accordion-navigation a,
@@ -3881,8 +3884,9 @@
 		font-size: 12px;
 	}
 
-	#bottom .accordion-navigation.socialMedia li {
+	#bottom .accordion-navigation.socialMedia  li > a {
 		float: left;
+		margin-right: 5px;
 	}
 
 	#bottom .accordion-navigation > a {
