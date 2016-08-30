@@ -436,10 +436,6 @@
 		border-radius: 0px !important;
 	}
 
-	input#ctl00_plhContent_ctl10_ctl03_txtZipcode {
-		height: 30px;
-	}
-
 	input[type="text"],
 	input[type="password"],
 	input[type="date"],
@@ -479,6 +475,10 @@
 		box-shadow: none;
 		margin: 0;
 		background: none;
+	}
+
+	.onePageCheckoutBdy .shipmentMethodSelect .ShipmentMetod_GLS_PakkeshopExt div.content input[type="text"] {
+		display: inline-block;
 	}
 
 	/*** Left off canvas menu styles ***/
@@ -3968,6 +3968,7 @@
     font-size: 12px;
     padding-right: 2px;
     bottom: 22px;
+		background-image: none;
 	}
 	.jsonProducts .productElement .productName a{
     min-height: 120px;
