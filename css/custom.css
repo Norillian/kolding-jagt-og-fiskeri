@@ -378,12 +378,13 @@
 	.orderConfirmation .orderConfirmShipmentAdd table tr td,
 	.orderConfirmationPayShipInfoBdy,
 	.orderConfirmationPayShipInfoBdy,
+	#ShopContent .productListBdy,
 	#ucInfoMessagebdy div,
 	#ucInfoMessagebdy div.error,
 	.orderConfirmation .orderConfirmPaymentAdd table tr td,
 	#AdvancedSearchResultsContainer .list_item_container .item_content .label,
 	#AdvancedSearchResultsContainer .list_item_container .item_content .price {
-		font-family: 'Amethysta', serif;
+		font-family: 'Amethysta', serif !important;
 	}
 
 	h1 {
