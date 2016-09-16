@@ -1481,7 +1481,7 @@
 	.productFilteringHeaderBdy,
 	.sortingContainer {
 		min-width: 220px;
-		max-width: 220px;
+		max-width: 247px;
 		text-transform: uppercase;
 		display: block;
 		border: solid 1px #c1c1c1;
@@ -1734,7 +1734,7 @@
 		padding: 0px;
 		margin-bottom: 0.9375rem;
 		text-align: center;
-		width: 50%;
+		width: 33%;
 		display:inline-block;
 		vertical-align:top;
 		float: none;
@@ -1929,7 +1929,7 @@
 	.imageBdy .noveltyProduct {
 		position: absolute;
 		top: 0.9375rem;
-		right: 0.9375rem;
+		right: 4.98rem;
 		color: #69C99C;
 		font-family: arial;
 		font-size: 11px;
@@ -3943,7 +3943,7 @@
 
 } /* min-width 641px, medium screens */
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+@media only screen and (min-width: 40.063em) and (max-width: 64em) and (orientation: portrait) {
 
 	/*** Bottompane tablet only styles ***/
 
@@ -3976,6 +3976,11 @@
   }
 
 	/*** Json productlist styles ***/
+
+	[class*="block-grid-"]>li,
+	.jsonProducts .productElement {
+		width: 50%;
+	}
 
 	.jsonProducts .productElement:hover {
 		box-shadow: 0px 0px 0px 0px #e6e6e6 inset;
