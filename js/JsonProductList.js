@@ -206,7 +206,7 @@ weightBeforeZipCode=200000;
 				}
 
 				if(val.greatBuy != false) {
-					goodDeal = $('<a></a>');
+					goodDeal = $("<a>Tilbud</a> ");
 					goodDeal.attr('href', val.URLPathAndQuery);
 					goodDeal.addClass('goodDeal');
 					goodDeal.append($('.hiddenText .goodDealText').text());
@@ -214,7 +214,7 @@ weightBeforeZipCode=200000;
 				}
 
 				if(val.deprecated != false) {
-					deprecatedProduct = $('<a></a>');
+					deprecatedProduct = $("<a>Udgået</a> ");
 					deprecatedProduct.attr('href', val.URLPathAndQuery);
 					deprecatedProduct.addClass('deprecatedProduct');
 					deprecatedProduct.append($('.hiddenText .deprecatedText').text());
@@ -222,7 +222,7 @@ weightBeforeZipCode=200000;
 				}
 
 				if(val.noveltyProduct != false) {
-					noveltyProduct = $('<a></a>');
+					noveltyProduct = $("<a>Nyhed</a> ");
 					noveltyProduct.attr('href', val.URLPathAndQuery);
 					noveltyProduct.addClass('noveltyProduct');
 					noveltyProduct.append($('.hiddenText .noveltyProductText').text());

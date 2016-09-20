@@ -1706,7 +1706,7 @@
 
 	.jsonProducts .productInnerDiv .deprecatedProduct {
 		position: absolute;
-		top: 0.9375rem;
+		top: 2.5rem;
 		left: 0.9375rem;
 		color: #ff9900;
 		font-family: arial;
@@ -1955,7 +1955,7 @@
 	.imageBdy .deprecatedProduct {
 		position: absolute;
 		top: 0.9375rem;
-		left: 0.9375rem;
+		left: 3.9375rem;
 		color: #F90;
 		font-family: arial;
 		font-size: 11px;
