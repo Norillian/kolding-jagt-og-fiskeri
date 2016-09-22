@@ -22,6 +22,10 @@
 
 .frontpageCarousel{
   max-height:494px;
+  opacity:0;
+}
+.frontpageCarousel.slick-initialized{
+	opacity:1;
 }
 
 .frontpageCarousel img {
