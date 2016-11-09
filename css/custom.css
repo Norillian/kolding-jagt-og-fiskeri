@@ -1185,7 +1185,7 @@
 	}
 
 	#miniBasket a.show-for-medium-up {
-		padding: 13px 16px;
+		padding: 11px 16px 12px;
 		min-width: 185px;
 		position: relative;
 		margin-top: 38px;
@@ -3947,7 +3947,7 @@
 
 } /* min-width 641px, medium screens */
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) and (orientation: portrait) {
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
 
 	/*** Bottompane tablet only styles ***/
 
@@ -3972,7 +3972,6 @@
 
     font-size: 12px;
     padding-right: 2px;
-    bottom: 22px;
 		background-image: none;
 	}
 	.jsonProducts .productElement .productName a{
@@ -4003,6 +4002,9 @@
 	}
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (max-width:910px){
+	#topMenuQuickLinks > ul > li > a{bottom: 22px;}
+}
 
 @media only screen and (min-width: 64.063em) {
 
